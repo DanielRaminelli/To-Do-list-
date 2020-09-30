@@ -2,7 +2,22 @@ console.log('meu nome é Daniel')
 
 let botaoAlerta = document.querySelector('#adicionar-tarefa');
 let inputTarefa = document.querySelector('#tarefa-digitada');
-let divTarefas=document.querySelector('#tarefas')
+let divTarefas=document.querySelector('#tarefas');
+
+function addAcaoDeFinalizar(){
+    let listaDeBotoes = document.querySelectorAll('.botao-tarefa');
+
+    for(let i = 0; i < listaDeBotoes.length; i++){
+        let botao = listaDeBotoes[i];
+
+        botao.addEventListener('click', function(){
+            if(window.confirm("Você tem certeza que quer excluir ?")){
+                botao.parentElement.parentElement.remove()
+            }
+        });
+    }
+}
+
 
 function criarTarefa(){
     if (inputTarefa.value.trim()==''){
@@ -24,11 +39,14 @@ function criarTarefa(){
     divTarefas.innerHTML += tarefa
     alert('Tarefa Criada: ' + inputTarefa.value)
     inputTarefa.value = ''
-}
+    addAcaoDeFinalizar()
+};
+
 botaoAlerta.addEventListener("click",criarTarefa);
 inputTarefa.addEventListener('keypress',function(event){
     if(event.key == 'Enter'){
         criarTarefa()
     }
-})
+});
+
 
