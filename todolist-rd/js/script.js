@@ -6,7 +6,7 @@ let divTarefas=document.querySelector('#tarefas')
 
 function criarTarefa(){
     let tarefa = `
-    <div class="col-md-4">
+    <div class="col-md-4 mb-4 mt-4">
         <div class="card-tarefa">
             <div class="texto-tarefa">
                 ${inputTarefa.value}
@@ -17,6 +17,7 @@ function criarTarefa(){
         </div>
     </div>
     `
+    divTarefas.innerHTML += tarefa
     alert('Tarefa Criada: ' + inputTarefa.value)
 }
 
