@@ -25,5 +25,10 @@ function criarTarefa(){
     alert('Tarefa Criada: ' + inputTarefa.value)
     inputTarefa.value = ''
 }
-
 botaoAlerta.addEventListener("click",criarTarefa);
+inputTarefa.addEventListener('keypress',function(event){
+    if(event.key == 'Enter'){
+        criarTarefa()
+    }
+})
+
