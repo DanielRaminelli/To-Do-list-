@@ -1,9 +1,10 @@
 console.log('meu nome é Daniel')
 
 let botaoAlerta = document.querySelector('#adicionar-tarefa')
+let inputTarefa = document.querySelector('#tarefa-digitada')
 
 function criarTarefa(){
-    alert('tarefa criada')
+    alert('Tarefa Criada: ' + inputTarefa.value)
 }
 
-botaoAlerta.addEventListener("click",criarTarefa)
+botaoAlerta.addEventListener("click",criarTarefa);
