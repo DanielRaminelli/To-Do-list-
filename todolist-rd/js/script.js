@@ -5,6 +5,10 @@ let inputTarefa = document.querySelector('#tarefa-digitada');
 let divTarefas=document.querySelector('#tarefas')
 
 function criarTarefa(){
+    if (inputTarefa.value.trim()==''){
+        inputTarefa.style.border = '2px solid red'
+        return alert ('Você deve digitar uma tarefa primeiro')
+    }
     let tarefa = `
     <div class="col-md-4 mb-4 mt-4">
         <div class="card-tarefa">
@@ -19,6 +23,7 @@ function criarTarefa(){
     `
     divTarefas.innerHTML += tarefa
     alert('Tarefa Criada: ' + inputTarefa.value)
+    inputTarefa.value = ''
 }
 
 botaoAlerta.addEventListener("click",criarTarefa);
